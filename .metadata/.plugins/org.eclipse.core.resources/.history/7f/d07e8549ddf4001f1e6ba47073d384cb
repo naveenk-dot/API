@@ -1,0 +1,19 @@
+package TestConfig;
+import static io.restassured.RestAssured.*;
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import api.payload.APASRequest;
+import api.utilities.ExcelUtility;
+import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.http.ContentType;
+import io.restassured.specification.RequestSpecification;
+public class BaseAPITest {
+
+	
+	new RequestSpecBuilder().setBase
+}
+
+

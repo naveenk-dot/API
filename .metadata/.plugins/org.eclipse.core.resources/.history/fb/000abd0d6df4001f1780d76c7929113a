@@ -1,0 +1,24 @@
+package api.test;
+
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import api.utilities.ExcelUtility;
+
+public class APASTests {
+
+	@Test(dataProvider="ExcelData")
+	public void ProgramTest(int id ,String Username,String firstName, String lastName, String email, String password, String phone , int userStatus)
+	{
+		
+	}
+	
+	@DataProvider(name="ExcelData")
+	public Object[][] setData() throws IOException
+	{
+		Object[][] data=ExcelUtility.getAllRows("C:\\Users\\Admin\\OneDrive\\Documents\\Book1.xlsx");
+		return data;
+	}
+}
