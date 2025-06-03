@@ -1,5 +1,6 @@
 package TestConfig;
 import static io.restassured.RestAssured.*;
+
 import java.io.IOException;
 
 import org.testng.annotations.BeforeClass;
@@ -22,12 +23,16 @@ public class BaseAPITest {
 	public void setUp()
 	{
 		requestSpec = new RequestSpecBuilder()
-	            .setContentType("application/json")
+				.setBaseUri("https://api.example.com")
+	            .addHeader("Authorization", "Bearer your_token_here")
+	            .addHeader("Content-Type", "application/json")
 	            .build();
 
 	        responseSpec = new ResponseSpecBuilder()
-	            .expectStatusCode(200)
-	            .build();
+	        		.expectStatusCode(200)
+	                .expectContentType(ContentType.JSON)
+	                .expectHeader("Content-Type", "application/json")
+	                .build();
 	}
 }
 

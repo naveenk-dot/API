@@ -15,8 +15,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtility {
 
-	public void readExcel() throws FileNotFoundException {
-		FileInputStream fis = new FileInputStream("C:\\Users\\Admin\\OneDrive\\Documents\\Book1.xlsx");
+	public static void readExcel(String path) throws FileNotFoundException {
+		FileInputStream fis = new FileInputStream(path);
 		XSSFWorkbook workbook = new XSSFWorkbook();
 		int sheets = workbook.getNumberOfSheets();
 		for (int i = 0; i < sheets; i++) {
